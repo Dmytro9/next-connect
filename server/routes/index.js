@@ -28,7 +28,6 @@ router.get("/api/auth/signout", authController.signout);
  */
 router.param("userId", userController.getUserById);
 
-
 router.put(
   "/api/users/follow",
   authController.checkAuth,
@@ -41,7 +40,6 @@ router.put(
   catchErrors(userController.deleteFollowing),
   catchErrors(userController.deleteFollower)
 );
-
 
 router
   .route("/api/users/:userId")
@@ -61,7 +59,6 @@ router.get(
   authController.checkAuth,
   catchErrors(userController.getUserFeed)
 );
-
 
 /**
  * POST ROUTES: /api/posts
